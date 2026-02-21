@@ -1,40 +1,10 @@
 import Link from "next/link";
 
-/* export default function Home() {
-  return (
-    <>
-   
-<div className="bg-gray-50">
-    <div className="relative isolate px-6 pt-14 lg:px-8">
-    <div aria-hidden="true" className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
-      <div ></div>
-    </div>
-    <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-      
-      <div className="text-center">
-        <h1 className="text-5xl font-semibold tracking-tight text-balance text-black sm:text-7xl">Agiliza la forma en que generas facturas</h1>
-        <p className="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">la manera mas facil de genearar facturas, colnsulta y modifica cuando quieras.</p>
-        <div className="mt-10 flex items-center justify-center gap-x-6">
-          <Link href="login" className=" bg-blue-500 px-3.5 py-3 text-sm font-semibold text-white shadow-xs hover:text-white hover:text-2xl hover:px-5  hover:font-bold mr-4 border border-white rounded-2xl">comenzar</Link>
-          
-        </div>
-      </div>
-    </div>
-    <div aria-hidden="true" className="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
-      <div ></div>
-    </div>
-  </div>
-</div>
-
-    </>
-  );
-} */
-
 export default function Home() {
   return (
     <div className="bg-white">
       <div className="relative isolate px-6 pt-14 lg:px-8">
-        
+
         <div
           aria-hidden="true"
           className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -72,7 +42,7 @@ export default function Home() {
           </div>
         </div>
 
-        
+
       </div>
     </div>
   );
