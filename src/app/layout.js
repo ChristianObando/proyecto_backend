@@ -1,15 +1,19 @@
 import Link from "next/link";
 import "./globals.css";
+import { DocumentTextIcon } from "@heroicons/react/24/outline";
 
 export const metadata = {
   title: "App Facturación",
   description: "Aplicación de facturación creada con Next.js",
 };
 
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 9dd2f6b48f568c7417768ecf9f2b6e7702790f12
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
@@ -17,12 +21,20 @@ export default function RootLayout({ children }) {
         <header className="sticky top-0 z-50 w-full bg-blue-600 shadow-md">
           <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between h-16 items-center">
+<<<<<<< HEAD
               
               
               <div className="shrink-0 flex items-center">
                 <Link href="/" className="flex items-center gap-2 group">
                   <div className="bg-white text-blue-600 p-1.5 rounded-lg">
                     <img src="./factura.png" alt="icono" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"/>
+=======
+              {/* Logo */}
+              <div className="shrink-0 flex items-center">
+                <Link href="/" className="flex items-center gap-2 group">
+                  <div className="text-white">
+                    <DocumentTextIcon className="h-12 w-12 rotate-[15deg]" />
+>>>>>>> 9dd2f6b48f568c7417768ecf9f2b6e7702790f12
                   </div>
                   <span className="font-bold text-xl tracking-tight text-white group-hover:text-blue-100 transition-colors">
                     Factura<span className="font-light">App</span>
@@ -45,7 +57,6 @@ export default function RootLayout({ children }) {
                   Registrarse
                 </Link>
               </div>
-
             </div>
           </nav>
         </header>
@@ -56,4 +67,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
