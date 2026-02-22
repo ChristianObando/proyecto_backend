@@ -1,13 +1,35 @@
+"use client";
+import { registrarFactura } from "../backend/create";
+
 export default function Registro() {
   const labelStyle = "block text-slate-700 text-sm font-semibold mb-1";
   const inputStyle =
     "w-full px-3 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none transition-all bg-white";
 
+    // Esta función conecta el formulario con el servidor
+  async function handleSubmit(event) {
+    event.preventDefault(); // Evita que la página se recargue
+    
+    // Creamos los datos del formulario
+    const formData = new FormData(event.target);
+    
+    // Llamamos a la función del servidor
+    const resultado = await registrarFactura(formData);
+
+    // Si el servidor responde con éxito, mostramos el alert en el cliente
+    if (resultado.success) {
+      alert("¡Factura guardada correctamente en el servidor!");
+      event.target.reset(); // Opcional: limpia el formulario
+    }
+  }
+
   return (
     <div className="flex items-center justify-center min-h-screen bg-slate-50 px-4 py-10">
-      
       <div className="w-full max-w-4xl">
-        <form className="bg-white shadow-2xl rounded-2xl p-8 md:p-12 border border-slate-100">
+        <form
+          action={registrarFactura}
+          className="bg-white shadow-2xl rounded-2xl p-8 md:p-12 border border-slate-100"
+        >
           <div className="border-b border-slate-100 pb-6 mb-8 flex justify-between items-end">
             <div>
               <h1 className="text-3xl font-extrabold text-slate-800">
@@ -25,7 +47,6 @@ export default function Registro() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-            
             <div className="space-y-6">
               <fieldset>
                 <legend className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-3">
@@ -38,6 +59,7 @@ export default function Registro() {
                     </label>
                     <input
                       id="dia"
+                      name="dia"
                       type="text"
                       placeholder="DD"
                       className={inputStyle}
@@ -49,17 +71,19 @@ export default function Registro() {
                     </label>
                     <input
                       id="mes"
+                      name="mes"
                       type="text"
                       placeholder="MM"
                       className={inputStyle}
                     />
                   </div>
                   <div>
-                    <label htmlFor="ano" className={labelStyle}>
+                    <label htmlFor="anio" className={labelStyle}>
                       Año
                     </label>
                     <input
-                      id="ano"
+                      id="anio"
+                      name="anio"
                       type="text"
                       placeholder="AAAA"
                       className={inputStyle}
@@ -72,6 +96,7 @@ export default function Registro() {
                   </label>
                   <input
                     id="ciudad"
+                    name="ciudad"
                     type="text"
                     placeholder="Ej: Cali"
                     className={inputStyle}
@@ -85,31 +110,35 @@ export default function Registro() {
                 </legend>
                 <div className="grid grid-cols-2 gap-3">
                   <div>
-                    <label htmlFor="nro_recibo" className={labelStyle}>
-                      N° de Recibo
-                    </label>
-                    <input
-                      id="nro_recibo"
-                      type="number"
-                      placeholder="000123"
-                      className={inputStyle}
-                    />
-                  </div>
-                  <div>
                     <label htmlFor="tipo_doc" className={labelStyle}>
                       Tipo Documento
                     </label>
-                    <select id="tipo_doc" className={inputStyle}>
+                    <select
+                      id="tipo_doc"
+                      name="tipo_doc"
+                      className={inputStyle}
+                    >
                       <option value="CC">Cédula (CC)</option>
                       <option value="NIT">NIT</option>
                       <option value="CE">Extranjería</option>
                     </select>
                   </div>
+                  <div>
+                    <label htmlFor="nro_documento" className={labelStyle}>
+                      Número de Documento
+                    </label>
+                    <input
+                      id="nro_documento"
+                      name="nro_documento"
+                      type="text"
+                      placeholder="Ej: 123456789"
+                      className={inputStyle}
+                    />
+                  </div>
                 </div>
               </fieldset>
             </div>
 
-           
             <div className="space-y-6">
               <fieldset>
                 <legend className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-3">
@@ -121,6 +150,7 @@ export default function Registro() {
                   </label>
                   <input
                     id="pagado_a"
+                    name="pagado_a"
                     type="text"
                     placeholder="Nombre del beneficiario"
                     className={inputStyle}
@@ -132,6 +162,7 @@ export default function Registro() {
                   </label>
                   <input
                     id="valor_num"
+                    name="valor_num"
                     type="text"
                     placeholder="0.00"
                     className={inputStyle}
@@ -143,6 +174,7 @@ export default function Registro() {
                   </label>
                   <textarea
                     id="valor_letras"
+                    name="valor_letras"
                     rows="2"
                     placeholder="Escriba el valor en letras..."
                     className={`${inputStyle} resize-none`}
@@ -152,7 +184,6 @@ export default function Registro() {
             </div>
           </div>
 
-          
           <div className="mt-10 pt-6 border-t border-slate-100 flex flex-col md:flex-row-reverse gap-4">
             <button
               type="submit"
@@ -172,3 +203,4 @@ export default function Registro() {
     </div>
   );
 }
+

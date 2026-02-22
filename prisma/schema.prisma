@@ -1,0 +1,23 @@
+// prisma\schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Factura {
+  id           Int      @id @default(autoincrement())
+  ciudad       String
+  dia          String
+  mes          String
+  ano          String
+  pagado_a     String
+  tipo_doc     String
+  numero_doc   String
+  valor_num    Float
+  valor_letras String
+  createdAt    DateTime @default(now())
+}
