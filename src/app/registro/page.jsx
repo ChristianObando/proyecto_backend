@@ -1,108 +1,11 @@
-/* export default function registro() {
-  return (
-    <div className="flex items-center justify-center min-h-screen w-full max-w-xs mx-auto h-full">
-      <form className="bg-white shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
 
-        <h1 className="text-3xl m-5">Registro</h1>
-
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            for="username"
-          >
-            Nombre
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="nombre"
-            type="text"
-            placeholder="Juan"
-            
-          ></input>
-        </div>
-
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            for="apellidos"
-          >
-            Apellidos
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="apellidos"
-            type="text"
-            placeholder="Perez"
-            
-          ></input>
-        </div>
-
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            for="username"
-          >
-            Email
-          </label>
-          <input
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            id="username"
-            type="email"
-            placeholder="ejemplo@correo.com"
-          ></input>
-        </div>
-        <div className="mb-6">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            for="password"
-          >
-            Contraseña
-          </label>
-          <input
-            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password"
-            type="password"
-            placeholder="******************"
-          ></input>
-        </div>
-
-        <div className="mb-6">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            for="password"
-          >
-            Confirmar contraseña
-          </label>
-          <input
-            className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-            id="password"
-            type="password"
-            placeholder="******************"
-          ></input>
-        </div>
-
-
-        <div className="flex items-center">
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold mx-4 py-2 px-4 rounded focus:outline-none focus:shadow-outline "
-            type="submit"
-          >
-            Guardar
-          </button>
-          
-        </div>
-      </form>
-    </div>
-  );
-}  */
-
-  export default function registro() {
+export default function registro() {
   return (
     // He cambiado el fondo a uno más suave y ajustado el ancho máximo
     <div className="flex items-center justify-center min-h-screen bg-slate-50 px-4">
       <div className="w-full max-w-md">
         <form className="bg-white shadow-xl rounded-xl px-10 pt-8 pb-10 border border-slate-100">
-          
+
           <div className="text-center mb-8">
             <h1 className="text-3xl font-extrabold text-slate-800">Crear cuenta</h1>
             <p className="text-slate-500 mt-2 text-sm">Ingresa tus datos para empezar a facturar</p>
@@ -177,7 +80,7 @@
             >
               Registrarse
             </button>
-            
+
             <p className="text-center text-sm text-slate-600">
               ¿Ya tienes cuenta? <a href="/login" className="text-blue-600 font-semibold hover:underline">Inicia sesión</a>
             </p>

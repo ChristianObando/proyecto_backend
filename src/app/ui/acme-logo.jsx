@@ -1,13 +1,16 @@
-import { DocumentCurrencyDollarIcon } from '@heroicons/react/24/outline';
+import { DocumentTextIcon } from '@heroicons/react/24/outline';
 import { lusitana } from '@/app/ui/fonts';
+import Link from 'next/link';
 
 export default function AcmeLogo() {
   return (
-    <div
-      className={`${lusitana.className} flex flex-row gap-x-4 items-center leading-none text-white`}
-    >
-      <DocumentCurrencyDollarIcon className="h-20 w-20 rotate-[15deg]" />
-      <p className=" text-center text-[10px]">FactuWhirpool</p>
-    </div>
+    <Link href="/" className="flex items-center gap-2 group">
+      <div className="text-white">
+        <DocumentTextIcon className="h-12 w-12 rotate-[15deg]" />
+      </div>
+      <span className="font-bold text-xl tracking-tight text-white group-hover:text-blue-100 transition-colors">
+        Factura<span className="font-light">App</span>
+      </span>
+    </Link>
   );
 }
