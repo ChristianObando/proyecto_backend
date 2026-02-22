@@ -9,12 +9,10 @@
     "lint": "eslint"
   },
   "dependencies": {
-<<<<<<< HEAD
     "@prisma/client": "^6.19.2",
-=======
+
     "@heroicons/react": "^2.2.0",
     "clsx": "^2.1.1",
->>>>>>> 9dd2f6b48f568c7417768ecf9f2b6e7702790f12
     "i": "^0.3.7",
     "next": "16.1.6",
     "pdf-lib": "^1.17.1",
