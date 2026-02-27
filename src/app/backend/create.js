@@ -48,7 +48,9 @@ export async function registrarFactura(formData) {
     });
 
     // 5. Éxito
-    revalidatePath("/");
+    /* revalidatePath("/"); */
+    revalidatePath("/dashboard/invoices");
+    redirect("/dashboard/invoices");
     return { success: true, message: "¡Factura guardada correctamente!" };
   } catch (error) {
     // Logueamos el error completo en la consola del servidor para debug

@@ -21,3 +21,16 @@ model Factura {
   valor_letras String
   createdAt    DateTime @default(now())
 }
+
+model AcumuladoAnual{
+  id       String   @id @default(uuid())
+  mes      String
+  cantidad Int
+}
+
+model Usuarios {
+  id       String @id @default(uuid())
+  name     String
+  email    String @unique
+  password String
+}
